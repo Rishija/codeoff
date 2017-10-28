@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Code-off prototype - Statistics Map</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<div class="mdl-layout mdl-js-layout demo-layout-transparent">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row"><span class="mdl-layout-title">EasyHealth</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="https://s.codepen.io/rishija/fullpage/GORNyy">About</a><a class="mdl-navigation__link" href="https://s.codepen.io/sidvishnoi/fullpage/EbxZVW">Test</a><a class="mdl-navigation__link" href="https://s.codepen.io/sidvishnoi/fullpage/XzWpXN/">Statistics</a><a class="mdl-navigation__link" href="">Contact us</a></nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <form id="disease" action="#">
+        <label>The map below shows the number of medical cases identified by the app for &nbsp;</label>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="sample1"/>
+          <label class="mdl-textfield__label" for="sample1">Diabetes</label>
+        </div>
+      </form>
+      <div id="chart_div" style="width: 100%; height: 90%"></div>
+    </div>
+  </main>
+</div>
+  <script src='https://www.gstatic.com/charts/loader.js'></script>
+<script src='https://code.getmdl.io/1.3.0/material.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

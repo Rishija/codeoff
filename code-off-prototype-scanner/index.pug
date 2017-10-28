@@ -1,0 +1,78 @@
+mixin Navigation()
+  header(class="mdl-layout__header")
+    .mdl-layout__header-row
+      span.mdl-layout-title EasyHealth
+      .mdl-layout-spacer
+      nav.mdl-navigation
+        a.mdl-navigation__link(href="https://s.codepen.io/rishija/fullpage/GORNyy") About
+        a.mdl-navigation__link(href="https://s.codepen.io/sidvishnoi/fullpage/EbxZVW") Test
+        a.mdl-navigation__link(href="https://s.codepen.io/sidvishnoi/fullpage/XzWpXN/") Statistics
+        a.mdl-navigation__link(href="") Contact us
+      
+mixin Uploader
+  .uploader.mdl-card.mdl-shadow--2dp
+    .mdl-card__title
+      h2.mdl-card__title-text
+        label(for="upload")
+          .mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.mdl-js-ripple-effect.mdl-button--accent.upload
+            i.material-icons send
+            |  Upload Image
+    .mdl-card__supporting-text
+      | Upload the eye scan to test it.
+    .mdl-card__actions.mdl-card--border
+      a#run.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Run Tests
+      .mdl-spinner.mdl-js-spinner.is-active(style="visibility: hidden")
+    input#upload(type="file")
+          
+mixin Item(title, test, status)
+  li.mdl-list__item.mdl-list__item--two-line
+    span.mdl-list__item-primary-content
+      if status
+        i.material-icons.mdl-list__item-avatar.mdl-color--red check
+      else
+        i.material-icons.mdl-list__item-avatar.mdl-color--green clear
+      span #{title}
+      if status
+        span.mdl-list__item-sub-title #{test}
+        
+mixin Recommendation(needed, disease)
+  if needed
+    - var googleSearch = 'https://www.google.co.in/search?q=' + disease + '+doctors+near+me';
+    p Please consult a nearby doctor. Click here to find related doctors near you:
+    .mdl-grid
+      .mdl-cell.mdl-cell--4-col
+        a(href=googleSearch, target="_blank", class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect") Find Doctor
+      .mdl-cell.mdl-cell--1-col &nbsp;
+      .mdl-cell.mdl-cell--4-col
+        a(href="", class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect") Print Report
+    img(style="max-width: 100%;", src="https://image.ibb.co/gpEzFm/Screen_Shot_2017_10_28_at_5_44_17_AM.jpg")
+  else
+    p You seem fine based on tests.
+
+mixin Report
+  #report.row.container.report.mdl-shadow--2dp
+    h2.mdl-typography--display-1.mdl-color-text--grey-700 Report
+    ul.demo-list-two.mdl-list
+      +Item('Diabetes', 'Blood leakage from optic nerves and yellow spots detected', true)
+      +Item('Thyroid', '', false)
+      +Item('Glaucoma', 'Swollen optic nerves', true)
+      +Item('High Cholestrol', '', false)
+      +Item('Cancer', '', false)
+      +Item('Arsus Senillis','Grey circle around the iris', true)
+      +Item('Tumor', '', false)
+      +Item('Cataract', '', false)
+      hr
+      +Recommendation(true, 'diabetes')
+
+div(class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header")
+  +Navigation
+  main.mdl-layout__content
+    .page-content
+      .mdl-grid
+        .mdl-cell.mdl-cell--3-col
+        .mdl-cell.mdl-cell--9-col
+          h1 Eye Scan
+          #imgpreview
+          +Uploader
+          br
+          +Report

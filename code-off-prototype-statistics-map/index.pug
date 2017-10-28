@@ -1,0 +1,25 @@
+mixin Navigation()
+  header(class="mdl-layout__header")
+    .mdl-layout__header-row
+      span.mdl-layout-title EasyHealth
+      .mdl-layout-spacer
+      nav.mdl-navigation
+        a.mdl-navigation__link(href="https://s.codepen.io/rishija/fullpage/GORNyy") About
+        a.mdl-navigation__link(href="https://s.codepen.io/sidvishnoi/fullpage/EbxZVW") Test
+        a.mdl-navigation__link(href="https://s.codepen.io/sidvishnoi/fullpage/XzWpXN/") Statistics
+        a.mdl-navigation__link(href="") Contact us
+
+mixin Area
+  form#disease(action="#")
+    label The map below shows the number of medical cases identified by the app for &nbsp;
+    .mdl-textfield.mdl-js-textfield
+      input(class="mdl-textfield__input", type="text" id="sample1")
+      label(class="mdl-textfield__label" for="sample1") Diabetes
+.mdl-layout.mdl-js-layout.demo-layout-transparent
+  +Navigation
+  main.mdl-layout__content
+    .page-content
+      +Area
+      #chart_div(style="width: 100%; height: 90%")
+        
+  

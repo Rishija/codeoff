@@ -1,0 +1,21 @@
+.heading{
+  margin:1em;
+  color:deeppink;
+  font-size: 200%;
+  font-family: Arial Black;
+}
+.content p{
+  font-size: 150%;
+  margin: 1em;
+  line-height:1.5;
+}
+.demo-layout-transparent header{
+  background: url('https://fee.org/media/21173/retinascan.jpg?anchor=center&mode=crop&height=656&widthratio=2.1341463414634146341463414634&rnd=131333671850000000') center / cover;
+  height: 230px;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
